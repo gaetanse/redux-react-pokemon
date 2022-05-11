@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import CardPokemon from "../../components/card/CardPokemon"
 import { getPokemons } from "../../service/pokemonService"
 import { Row } from "react-bootstrap"
+import ModalPokemon from "../../components/modal/ModalPokemon"
 
 export default function Home() {
 
@@ -24,14 +25,17 @@ export default function Home() {
     }, [])
 
     return (
-        <Row xs={1} md={6} className="g-2">
-            {
-                listePokemons.map((e,i)=>{
-                    return(
-                        <CardPokemon key={i} id={i+1} name={e.name}/>
-                    )
-                })
-            }
-        </Row>
+        <div>
+            <Row xs={1} md={6} className="g-2">
+                {
+                    listePokemons.map((e,i)=>{
+                        return(
+                            <CardPokemon key={i} id={i+1} name={e.name}/>
+                        )
+                    })
+                }
+            </Row>
+            <ModalPokemon/>
+        </div>
     )
 }

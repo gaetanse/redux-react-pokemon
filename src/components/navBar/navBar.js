@@ -1,8 +1,9 @@
 import { Navbar,Container,Nav,Button } from "react-bootstrap"
 import style from './navBar.css';
 import Counter from "../counter/Counter";
-import { BsArrowsFullscreen } from "react-icons/bs"
 import { IoClose } from "react-icons/io5"
+import ClearPokedex from "../buttons/clearPokedex"
+import ShowPokedex from "../buttons/showPokedex"
 
 export default function NavBar() {
   return (
@@ -17,8 +18,8 @@ export default function NavBar() {
     </Nav>
     <Nav className="justify-content-end">
         <Counter/>
-        <Button variant="danger"><IoClose/>&nbsp;&nbsp;&nbsp;Clear</Button>
-        <Button className="mx-4" variant="primary"><BsArrowsFullscreen/>&nbsp;&nbsp;&nbsp;Show</Button>
+        <ClearPokedex/>
+        <ShowPokedex/>
     </Nav>
     </Container>
   </Navbar>

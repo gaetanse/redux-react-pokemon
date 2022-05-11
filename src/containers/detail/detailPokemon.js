@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 import { Row,Col } from "react-bootstrap"
 import GoBack from "./../../components/buttons/goBack"
 import AddPokemon from "./../../components/buttons/addPokemon"
+import ModalPokemon from "../../components/modal/ModalPokemon"
 
 export default function DetailPokemon(props) {
 
@@ -12,7 +13,6 @@ export default function DetailPokemon(props) {
 
     useEffect(() =>{
         getPokemon(state.id).then(res =>{
-          console.log(res.data)
           setPokemon(res.data)
         })
     }, [])
@@ -30,7 +30,7 @@ export default function DetailPokemon(props) {
                 <img src={pokemon.sprites.front_default}></img>
                 : <div></div>
               }<br/>
-              <AddPokemon/>
+              <AddPokemon id={state.id}/>
             </Col>
             <Col>
               HEIGHT<br/>
@@ -61,13 +61,13 @@ export default function DetailPokemon(props) {
               }
             </Col>
           </Row>
-          <Row>
+          <Row style={{display: "inline"}}>
             MOVES<br/>
               {
                 pokemon.moves !== undefined ?
                 pokemon.moves.map((e,i)=>{
                   return(
-                    <p key={i}>{e.move.name}</p>
+                    <div style={{display: "inline",backgroundColor: "pink",border: "solid white 2px"}} key={i}>{e.move.name}</div>
                   )
                 })
                 :<div></div>
@@ -76,6 +76,7 @@ export default function DetailPokemon(props) {
           <Row>
             <GoBack/>
           </Row>
+            <ModalPokemon/>
         </div>
       }
     </div>
