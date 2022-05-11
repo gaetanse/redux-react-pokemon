@@ -4,10 +4,10 @@ const INITIAL_STATE = {
 
 function PokemonReducer (state = INITIAL_STATE, action) {
     switch (action.type) {
-        case 'UPDATE': {
+        case 'ADDPOKEMON': {
             return{
                 ...state,
-                listeArticles: [...state.listeArticles, action.payload]
+                listePokemons: [...state.listePokemons, action.payload]
             }
         }
         default: return state
