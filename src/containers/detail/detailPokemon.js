@@ -25,6 +25,11 @@ export default function DetailPokemon(props) {
           <Row>
             <Col>
               {pokemon.name}<br/>
+              {
+                pokemon.sprites !== undefined ?
+                <img src={pokemon.sprites.front_default}></img>
+                : <div></div>
+              }<br/>
               <AddPokemon/>
             </Col>
             <Col>
@@ -35,9 +40,38 @@ export default function DetailPokemon(props) {
               XP<br/>
               {pokemon.base_experience}<br/>
               ABILITIES<br/>
+              {
+                pokemon.abilities !== undefined ?
+                pokemon.abilities.map((e,i)=>{
+                  return(
+                    <p key={i}>{e.ability.name}</p>
+                  )
+                })
+                :<div></div>
+              }<br/>
+              TYPES<br/>
+              {
+                pokemon.types !== undefined ?
+                pokemon.types.map((e,i)=>{
+                  return(
+                    <p key={i}>{e.type.name}</p>
+                  )
+                })
+                :<div></div>
+              }
             </Col>
           </Row>
           <Row>
+            MOVES<br/>
+              {
+                pokemon.moves !== undefined ?
+                pokemon.moves.map((e,i)=>{
+                  return(
+                    <p key={i}>{e.move.name}</p>
+                  )
+                })
+                :<div></div>
+              }
           </Row>
           <Row>
             <GoBack/>
