@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import CardPokemon from "../../components/card/CardPokemon"
 import { getPokemons } from "../../service/pokemonService"
+import { Row } from "react-bootstrap"
 
 export default function Home() {
 
@@ -22,20 +24,14 @@ export default function Home() {
     }, [])
 
     return (
-        <div>
-
-        {
-            listePokemons.map((e,i)=>{
-                return(
-                    <div>
-                    <p>{i}</p>
-                    <p>{e.name}</p>
-                    <p>{e.url}</p>
-                    </div>
-                )
-            })
-        }
-
-        </div>
+        <Row xs={1} md={6} className="g-2">
+            {
+                listePokemons.map((e,i)=>{
+                    return(
+                        <CardPokemon id={i+1} name={e.name}/>
+                    )
+                })
+            }
+        </Row>
     )
 }
