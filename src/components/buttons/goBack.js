@@ -1,5 +1,5 @@
 export default function GoBack() {
   return (
-    <div>goBack</div>
+    <div>Back to list</div>
   )
 }

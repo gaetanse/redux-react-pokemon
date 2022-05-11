@@ -1,5 +1,5 @@
 export default function AddPokemon() {
   return (
-    <div>addPokemon</div>
+    <div>add</div>
   )
 }
