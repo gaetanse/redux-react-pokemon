@@ -1,5 +1,5 @@
 export default function ClearPokedex() {
   return (
-    <div>clearPokedex</div>
+    <div>clear</div>
   )
 }
