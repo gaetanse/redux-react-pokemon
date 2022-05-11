@@ -18,7 +18,9 @@ export default function CardPokemon(props) {
 
     function goToDetail(){
       navigate("/detail",{
-        id: props.id,
+        state:{
+          id: props.id
+        }
       })
     }
 
