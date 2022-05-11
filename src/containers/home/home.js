@@ -28,7 +28,7 @@ export default function Home() {
             {
                 listePokemons.map((e,i)=>{
                     return(
-                        <CardPokemon id={i+1} name={e.name}/>
+                        <CardPokemon key={i} id={i+1} name={e.name}/>
                     )
                 })
             }
