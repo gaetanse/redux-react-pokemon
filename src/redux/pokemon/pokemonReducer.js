@@ -4,7 +4,7 @@ const INITIAL_STATE = {
 
 function PokemonReducer (state = INITIAL_STATE, action) {
     switch (action.type) {
-        case 'ADDPOKEMON': {
+        case 'ADD-POKEMON': {
             return{
                 ...state,
                 listePokemons: [...state.listePokemons, action.payload]

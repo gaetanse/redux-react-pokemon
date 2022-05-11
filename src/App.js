@@ -1,7 +1,7 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Accueil from './containers/home/Home'
+import Home from './containers/home/Home'
 import Detail from './containers/detail/DetailPokemon'
 import Menu from './components/navBar/NavBar'
 
@@ -12,7 +12,7 @@ function App() {
       <Menu/>
       <div style={{margin: "25px 25px"}}>
       <Routes>
-        <Route path="/" element={<Accueil/>}></Route>
+        <Route path="/" element={<Home/>}></Route>
         <Route path="/detail" element={<Detail/>}></Route>
       </Routes>
       </div>
