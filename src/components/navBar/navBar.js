@@ -1,6 +1,6 @@
 import { Navbar,Container,Nav,Button } from "react-bootstrap"
 import style from './navBar.css';
-import Counter from "../counter/Counter";
+import Counter from "../counter/counter";
 import { IoClose } from "react-icons/io5"
 import ClearPokedex from "../buttons/clearPokedex"
 import ShowPokedex from "../buttons/showPokedex"

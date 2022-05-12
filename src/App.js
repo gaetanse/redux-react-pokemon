@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './containers/home/Home'
 import Detail from './containers/detail/DetailPokemon'
-import Menu from './components/navBar/NavBar'
+import Menu from './components/navBar/navBar'
 
 function App() {
   return (
