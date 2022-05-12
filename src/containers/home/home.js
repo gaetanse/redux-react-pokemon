@@ -27,12 +27,15 @@ export default function Home() {
     return (
         <div>
             <Row xs={1} md={6} className="g-2">
+
                 {
+                    listePokemons.lenght !==0 ?
                     listePokemons.map((e,i)=>{
                         return(
                             <CardPokemon key={i} id={i+1} name={e.name}/>
                         )
                     })
+                    :<div></div>
                 }
             </Row>
             <ModalPokemon/>

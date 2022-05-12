@@ -1,6 +1,6 @@
 import React from 'react'
 import './card.css'
-import { Row,Col,Card } from "react-bootstrap"
+import { Row,Col,Card,Spinner } from "react-bootstrap"
 import { useEffect,useState } from 'react'
 import { getPokemon } from "../../service/pokemonService"
 import { useNavigate } from 'react-router-dom'
@@ -26,13 +26,17 @@ export default function CardPokemon(props) {
 
     return (
       <Col key={props.id} onClick={goToDetail}>
-          <Card style={{ width: 'auto', height: 'auto',border: "solid 1px #E2EF48" }}>
-                  <Card.Img variant="top" src={url} style={{ width: 'auto', height: 'auto',background: "#F7F7F7" }} />
-              <Card.Body style={{color:"#E42F32"}}>
-                  <Card.Text><strong>#{props.id}</strong></Card.Text>
-                  <Card.Text style={{fontSize: "12px"}}><strong>{(props.name).toUpperCase()}</strong></Card.Text>
-              </Card.Body>
-          </Card>
+          {
+            url !== "" ?
+            <Card style={{ width: 'auto', height: 'auto',border: "solid 1px #E2EF48" }}>
+                      <Card.Img variant="top" src={url} style={{ width: 'auto', height: 'auto',background: "#F7F7F7" }} />
+                <Card.Body style={{color:"#E42F32"}}>
+                    <Card.Text><strong>#{props.id}</strong></Card.Text>
+                    <Card.Text style={{fontSize: "12px"}}><strong>{(props.name).toUpperCase()}</strong></Card.Text>
+                </Card.Body>
+            </Card>
+            :<Spinner animation="border" />
+          }
       </Col>
     )
 }

@@ -23,7 +23,7 @@ export default function DetailPokemon(props) {
         pokemon !== 0 && 
           <div>
           <Row>
-            <Col className="mx-4 " style={{background: "white",borderRadius: "15px"}}>
+            <Col className="mx-4" style={{background: "white",borderRadius: "15px",padding:"5% 5%"}}>
               <Row style={{color:"black",textTransform: "uppercase",fontSize: "25px"}}><strong>{pokemon.name}</strong></Row>
               <Row className="d-flex justify-content-center">{
                 pokemon.sprites !== undefined ?
@@ -33,7 +33,7 @@ export default function DetailPokemon(props) {
               </Row>
               <Row style={{margin: "auto auto",width: "30%"}}><AddPokemon id={state.id}/></Row>
             </Col>
-            <Col className="mx-4" style={{background: "white",borderRadius: "15px"}}>
+            <Col className="mx-4" style={{background: "white",borderRadius: "15px",padding:"2% 2%"}}>
               <strong>HEIGHT</strong><br/>
               {pokemon.height}<br/>
               <strong>WEIGHT</strong><br/>
@@ -63,20 +63,20 @@ export default function DetailPokemon(props) {
             </Col>
           </Row>
           <div className="my-4" style={{backgroundColor:"white",borderRadius: "15px"}}>
-          <Row style={{display: "inline"}}>
+          <Row style={{margin: "auto auto"}}>
             <strong>MOVES</strong><br/>
               {
                 pokemon.moves !== undefined ?
                 pokemon.moves.map((e,i)=>{
                   return(
-                    <div style={{display: "inline",backgroundColor: "pink",border: "solid white 2px",borderRadius: "10px",width: "30%"}} key={i}>{e.move.name}</div>
+                    <div className="mx-1" style={{backgroundColor: "pink",width:"auto",border: "solid white 1px",borderRadius: "10px"}} key={i}>{e.move.name}</div>
                   )
                 })
                 :<div></div>
               }
           </Row>
           </div>
-          <Row className="mx-2" style={{width: "20%"}}>
+          <Row className="mx-2" style={{width: "15%"}}>
             <GoBack/>
           </Row>
             <ModalPokemon/>
