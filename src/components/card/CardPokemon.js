@@ -35,7 +35,7 @@ export default function CardPokemon(props) {
                     <Card.Text style={{fontSize: "12px"}}><strong>{(props.name).toUpperCase()}</strong></Card.Text>
                 </Card.Body>
             </Card>
-            :<Spinner animation="border" />
+            :<div></div>
           }
       </Col>
     )
