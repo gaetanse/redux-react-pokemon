@@ -3,7 +3,7 @@ import { getPokemon } from "../../service/pokemonService"
 import { useLocation, useNavigate } from "react-router-dom"
 import { Row,Col } from "react-bootstrap"
 import GoBack from "./../../components/buttons/goBack"
-import AddPokemon from "./../../components/buttons/addPokemon"
+import AddPokemon from "../../components/buttons/addPokemon"
 import ModalPokemon from "../../components/modal/ModalPokemon"
 
 export default function DetailPokemon(props) {
