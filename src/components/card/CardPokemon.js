@@ -26,9 +26,9 @@ export default function CardPokemon(props) {
 
     return (
       <Col key={props.id} onClick={goToDetail}>
-          <Card style={{ width: 'auto', height: 'auto' }}>
-              <Card.Body>
-                  <Card.Img variant="top" src={url} style={{ width: 'auto', height: 'auto' }} />
+          <Card style={{ width: 'auto', height: 'auto',border: "solid 1px #E2EF48" }}>
+                  <Card.Img variant="top" src={url} style={{ width: 'auto', height: 'auto',background: "#F7F7F7" }} />
+              <Card.Body style={{color:"#E42F32"}}>
                   <Card.Text><strong>#{props.id}</strong></Card.Text>
                   <Card.Text style={{fontSize: "12px"}}><strong>{(props.name).toUpperCase()}</strong></Card.Text>
               </Card.Body>
