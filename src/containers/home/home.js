@@ -26,7 +26,7 @@ export default function Home() {
 
     return (
         <div>
-            <Row xs={1} md={6} className="g-2">
+            <Row md={6} className="g-4">
 
                 {
                     listePokemons.lenght !==0 ?

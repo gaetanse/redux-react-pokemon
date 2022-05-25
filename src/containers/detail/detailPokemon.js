@@ -1,6 +1,6 @@
 import { useState,useEffect} from "react"
 import { getPokemon } from "../../service/pokemonService"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { Row,Col } from "react-bootstrap"
 import GoBack from "./../../components/buttons/goBack"
 import AddPokemon from "../../components/buttons/addPokemon"
@@ -10,11 +10,22 @@ export default function DetailPokemon(props) {
 
     const [pokemon,setPokemon] = useState([])
     const {state} = useLocation()
+    const [val,setVal] = useState(undefined)
 
     useEffect(() =>{
         getPokemon(state.id).then(res =>{
           setPokemon(res.data)
         })
+
+        if(state.id<10){
+          setVal("00"+state.id)
+        }
+        else if(state.id<100){
+          setVal("0"+state.id)
+        }
+        else if(state.id<999){
+          setVal(state.id)
+        }
     }, [])
 
   return (
@@ -27,7 +38,7 @@ export default function DetailPokemon(props) {
               <Row style={{color:"black",textTransform: "uppercase",fontSize: "25px"}}><strong>{pokemon.name}</strong></Row>
               <Row className="d-flex justify-content-center">{
                 pokemon.sprites !== undefined ?
-                <img src={pokemon.sprites.front_default} style={{width:"55%",height: "55%"}}></img>
+                <img src={"https://raw.githubusercontent.com/harshit23897/Pokemon-Sprites/master/assets/imagesHQ/"+val+".png"} style={{width:"55%",height: "55%"}} alt="pokemon"></img>
                 : <div></div>
               }
               </Row>
