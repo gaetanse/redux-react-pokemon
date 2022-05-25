@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = "https://pokeapi.co/api/v2/pokemon?limit=300";
+const url = "https://pokeapi.co/api/v2/pokemon?limit=150";
 
 export const getPokemon = (id) => {
     return axios.get("https://pokeapi.co/api/v2/pokemon/" + id);

@@ -34,17 +34,17 @@ export default function DetailPokemon(props) {
         pokemon !== 0 && 
           <div>
           <Row>
-            <Col className="mx-4" style={{background: "white",borderRadius: "15px",padding:"5% 5%"}}>
+            <Col className="mx-1 my-1" style={{background: "white",borderRadius: "15px",padding:"2% 2%",border:"1px solid black",boxShadow:"2px 2px 2px black"}} sm>
               <Row style={{color:"black",textTransform: "uppercase",fontSize: "25px"}}><strong>{pokemon.name}</strong></Row>
               <Row className="d-flex justify-content-center">{
                 pokemon.sprites !== undefined ?
-                <img src={"https://raw.githubusercontent.com/harshit23897/Pokemon-Sprites/master/assets/imagesHQ/"+val+".png"} style={{width:"55%",height: "55%"}} alt="pokemon"></img>
+                <img src={"https://raw.githubusercontent.com/harshit23897/Pokemon-Sprites/master/assets/imagesHQ/"+val+".png"} style={{width:"75%",height: "auto"}} alt="pokemon"></img>
                 : <div></div>
               }
               </Row>
-              <Row style={{margin: "auto auto",width: "30%"}}><AddPokemon id={state.id}/></Row>
+              <Row style={{margin: "auto auto",width: "auto"}}><AddPokemon id={state.id}/></Row>
             </Col>
-            <Col className="mx-4" style={{background: "white",borderRadius: "15px",padding:"2% 2%"}}>
+            <Col xs className="mx-1 my-1" style={{background: "white",borderRadius: "15px",padding:"2% 2%",border:"1px solid black",boxShadow:"2px 2px 2px black"}}>
               <strong>HEIGHT</strong><br/>
               {pokemon.height}<br/>
               <strong>WEIGHT</strong><br/>
@@ -73,7 +73,7 @@ export default function DetailPokemon(props) {
               }
             </Col>
           </Row>
-          <div className="my-4" style={{backgroundColor:"white",borderRadius: "15px"}}>
+          <div className="my-4" style={{backgroundColor:"white",borderRadius: "15px",border:"1px solid black",boxShadow:"2px 2px 2px black"}}>
           <Row style={{margin: "auto auto"}}>
             <strong>MOVES</strong><br/>
               {
