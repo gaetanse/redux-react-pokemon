@@ -1,8 +1,8 @@
-### `démarrage`
+### `Démarrage`
 
 Pour démarrer le projet, il faut utiliser la commande : npm start
 
-### `informations`
+### `Informations`
 
 Utilisation de react (redux,router) et de bootstrap ainsi que des fichiers json.
 
